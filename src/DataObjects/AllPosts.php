@@ -2,6 +2,7 @@
 namespace NourAlmasrieh\SocialWall;
 
 use SilverStripe\Assets\Image;
+use SilverStripe\Forms\TextareaField;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\DateField;
 use SilverStripe\Forms\TextField;
@@ -39,7 +40,7 @@ class AllPosts extends DataObject
         $fields->removeByName([
         ]);
         $fields->addFieldToTab('Root.Main', TextField::create('Username','Username'));
-        $fields->addFieldToTab('Root.Main', HTMLEditorField::create('Message','Content'));
+        $fields->addFieldToTab('Root.Main', TextareaField::create('Message','Content'));
         $fields->addFieldToTab('Root.Main', DateField::create('CreatedDate','Date'));
         $fields->addFieldToTab('Root.Main', UploadField::create('Bild','Bild'));
         $fields->addFieldToTab('Root.Main', TextField::create('MediaType','MediaType'));
